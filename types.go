@@ -173,7 +173,7 @@ func SetBufferInfoRecoveryControl(ctl bool) func(*BufferInfo) {
 func NewBufferInfo(opts ...func(*BufferInfo)) *BufferInfo {
 	info := new(BufferInfo)
 
-	info.Id = uuid.Must(uuid.NewV4()).String()
+	info.Id = uuid.Must(uuid.NewV4(),nil).String()
 	info.PersistencePeriod = 5 * time.Minute
 
 	for _, opt := range opts {
